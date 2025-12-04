@@ -192,7 +192,7 @@ class CustomHeader extends HTMLElement {
             
             <header class="header-static">
                 <div class="container nav-container">
-                    <a href="/" class="logo">Isaque<span>Santos</span></a>
+                    <a href="index.html" class="logo">Isaque<span>Santos</span></a>
                     <ul class="nav-links">
                         <li><a href="/#portfolio">Portfólio</a></li>
                         <li><a href="about.html">Sobre</a></li>
@@ -206,7 +206,7 @@ class CustomHeader extends HTMLElement {
             
             <header class="header-fixed">
                 <div class="container nav-container">
-                    <a href="/" class="logo">Isaque<span>Santos</span></a>
+                    <a href="index.html" class="logo">Isaque<span>Santos</span></a>
                     <ul class="nav-links">
                         <li><a href="/#portfolio">Portfólio</a></li>
                         <li><a href="about.html">Sobre</a></li>
