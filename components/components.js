@@ -359,7 +359,7 @@ class CustomHeader extends HTMLElement {
             
             <nav class="mobile-nav-menu">
                 <ul>
-                    <li><a href="index.html/#portfolio">Portfólio</a></li>
+                    <li><a href="index.html#portfolio">Portfólio</a></li>
                     <li><a href="about.html">Sobre</a></li>
                     <li><a href="#contact">Contato</a></li>
                 </ul>
@@ -369,7 +369,7 @@ class CustomHeader extends HTMLElement {
                 <div class="container nav-container">
                     <a href="index.html" class="logo">Isaque<span>Santos</span></a>
                     <ul class="nav-links">
-                        <li><a href="index.html/#portfolio">Portfólio</a></li>
+                        <li><a href="index.html#portfolio">Portfólio</a></li>
                         <li><a href="about.html">Sobre</a></li>
                         <li><a href="#contact">Contato</a></li>
                     </ul>
@@ -388,7 +388,7 @@ class CustomHeader extends HTMLElement {
                 <div class="container nav-container">
                     <a href="index.html" class="logo">Isaque<span>Santos</span></a>
                     <ul class="nav-links">
-                        <li><a href="index.html/#portfolio">Portfólio</a></li>
+                        <li><a href="index.html#portfolio">Portfólio</a></li>
                         <li><a href="about.html">Sobre</a></li>
                         <li><a href="#contact">Contato</a></li>
                     </ul>
