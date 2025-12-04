@@ -3,9 +3,11 @@ class CustomHeader extends HTMLElement {
     constructor() {
         super();
         this.handleScroll = this.handleScroll.bind(this);
+        this.toggleMobileMenu = this.toggleMobileMenu.bind(this);
         this.staticHeader = null;
         this.fixedHeader = null;
         this.staticHeaderHeight = 0;
+        this.mobileMenuOpen = false;
     }
 
     connectedCallback() {
@@ -24,6 +26,9 @@ class CustomHeader extends HTMLElement {
     cacheElements() {
         this.staticHeader = this.querySelector('.header-static');
         this.fixedHeader = this.querySelector('.header-fixed');
+        this.mobileMenuButtons = this.querySelectorAll('.mobile-menu');
+        this.mobileNavMenus = this.querySelectorAll('.mobile-nav-menu');
+        this.overlays = this.querySelectorAll('.mobile-overlay');
     }
 
     calculateHeights() {
@@ -44,11 +49,74 @@ class CustomHeader extends HTMLElement {
 
     handleResize = () => {
         this.calculateHeights();
+        if (window.innerWidth > 768 && this.mobileMenuOpen) {
+            this.toggleMobileMenu();
+        }
+    }
+
+    toggleMobileMenu() {
+        this.mobileMenuOpen = !this.mobileMenuOpen;
+        
+        this.mobileMenuButtons.forEach(btn => {
+            btn.classList.toggle('active');
+        });
+        
+        this.mobileNavMenus.forEach(menu => {
+            menu.classList.toggle('active');
+        });
+
+        document.body.style.overflow = this.mobileMenuOpen ? 'hidden' : '';
     }
 
     addEventListeners() {
         window.addEventListener('scroll', this.handleScroll, { passive: true });
         window.addEventListener('resize', this.handleResize);
+        
+        this.mobileMenuButtons.forEach(btn => {
+            btn.addEventListener('click', (e) => {
+                e.preventDefault();
+                e.stopPropagation();
+                this.toggleMobileMenu();
+            });
+        });
+
+        const mobileLinks = this.querySelectorAll('.mobile-nav-menu a');
+        mobileLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                if (this.mobileMenuOpen) {
+                    this.toggleMobileMenu();
+                }
+            });
+        });
+
+        const overlays = this.querySelectorAll('.mobile-overlay');
+        overlays.forEach(overlay => {
+            overlay.addEventListener('click', () => {
+                if (this.mobileMenuOpen) {
+                    this.toggleMobileMenu();
+                }
+            });
+        });
+    }
+
+    toggleMobileMenu() {
+        this.mobileMenuOpen = !this.mobileMenuOpen;
+        
+        this.mobileMenuButtons.forEach(btn => {
+            btn.classList.toggle('active');
+        });
+        
+        this.mobileNavMenus.forEach(menu => {
+            menu.classList.toggle('active');
+        });
+
+
+        const overlays = this.querySelectorAll('.mobile-overlay');
+        overlays.forEach(overlay => {
+            overlay.classList.toggle('active');
+        });
+
+        document.body.style.overflow = this.mobileMenuOpen ? 'hidden' : '';
     }
 
     render() {
@@ -106,6 +174,7 @@ class CustomHeader extends HTMLElement {
                     font-weight: 700;
                     color: var(--text-color);
                     text-decoration: none;
+                    z-index: 1002;
                 }
                 
                 .logo span {
@@ -162,6 +231,145 @@ class CustomHeader extends HTMLElement {
                     color: var(--text-color);
                     background: none;
                     border: none;
+                    z-index: 1002;
+                    width: 30px;
+                    height: 30px;
+                    position: relative;
+                    padding: 0;
+                }
+
+                .hamburger {
+                    width: 30px;
+                    height: 20px;
+                    position: relative;
+                    transform: rotate(0deg);
+                    transition: .5s ease-in-out;
+                    cursor: pointer;
+                }
+
+                .hamburger span {
+                    display: block;
+                    position: absolute;
+                    height: 3px;
+                    width: 100%;
+                    background: var(--text-color);
+                    border-radius: 3px;
+                    opacity: 1;
+                    left: 0;
+                    transform: rotate(0deg);
+                    transition: .25s ease-in-out;
+                }
+
+                .hamburger span:nth-child(1) {
+                    top: 0px;
+                }
+
+                .hamburger span:nth-child(2),
+                .hamburger span:nth-child(3) {
+                    top: 8px;
+                }
+
+                .hamburger span:nth-child(4) {
+                    top: 16px;
+                }
+
+                .mobile-menu.active .hamburger span:nth-child(1) {
+                    top: 8px;
+                    width: 0%;
+                    left: 50%;
+                }
+
+                .mobile-menu.active .hamburger span:nth-child(2) {
+                    transform: rotate(45deg);
+                }
+
+                .mobile-menu.active .hamburger span:nth-child(3) {
+                    transform: rotate(-45deg);
+                }
+
+                .mobile-menu.active .hamburger span:nth-child(4) {
+                    top: 8px;
+                    width: 0%;
+                    left: 50%;
+                }
+
+                .mobile-nav-menu {
+                    position: fixed;
+                    top: 0;
+                    right: -100%;
+                    width: 70%;
+                    max-width: 300px;
+                    height: 100vh;
+                    background-color: var(--secondary-color-opacity85);
+                    backdrop-filter: blur(20px);
+                    z-index: 1001;
+                    transition: right 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+                    padding-top: 5rem;
+                    box-shadow: -5px 0 20px rgba(0, 0, 0, 0.5);
+                }
+
+                .mobile-nav-menu.active {
+                    right: 0;
+                }
+
+                .mobile-nav-menu ul {
+                    list-style: none;
+                    padding: 0;
+                    margin: 0;
+                }
+
+                .mobile-nav-menu li {
+                    border-bottom: 1px solid var(--secondary-color-opacity50);
+                }
+
+                .mobile-nav-menu a {
+                    display: block;
+                    padding: 1.5rem 2rem;
+                    color: var(--text-color);
+                    text-decoration: none;
+                    font-weight: 600;
+                    font-size: 1.1rem;
+                    transition: all 0.3s ease;
+                    position: relative;
+                }
+
+                .mobile-nav-menu a::before {
+                    content: '';
+                    position: absolute;
+                    left: 0;
+                    top: 50%;
+                    transform: translateY(-50%);
+                    width: 0;
+                    height: 100%;
+                    background-color: var(--highlight-color);
+                    transition: width 0.3s ease;
+                    z-index: -1;
+                }
+
+                .mobile-nav-menu a:hover::before {
+                    width: 5px;
+                }
+
+                .mobile-nav-menu a:hover {
+                    padding-left: 2.5rem;
+                }
+
+                .mobile-overlay {
+                    position: fixed;
+                    top: 0;
+                    left: 0;
+                    width: 100%;
+                    height: 100vh;
+                    background-color: rgba(0, 0, 0, 0.7);
+                    z-index: 1000;
+                    opacity: 0;
+                    pointer-events: none;
+                    transition: opacity 0.4s ease;
+                }
+
+                .mobile-overlay.active {
+                    opacity: 1;
+                    pointer-events: all;
                 }
 
                 .header-fixed .logo {
@@ -190,6 +398,8 @@ class CustomHeader extends HTMLElement {
                 }
             </style>
             
+            <div class="mobile-overlay"></div>
+            
             <header class="header-static">
                 <div class="container nav-container">
                     <a href="index.html" class="logo">Isaque<span>Santos</span></a>
@@ -199,9 +409,21 @@ class CustomHeader extends HTMLElement {
                         <li><a href="#contact">Contato</a></li>
                     </ul>
                     <button class="mobile-menu">
-                        <i class="fas fa-bars"></i>
+                        <div class="hamburger">
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                        </div>
                     </button>
                 </div>
+                <nav class="mobile-nav-menu">
+                    <ul>
+                        <li><a href="/#portfolio">Portfólio</a></li>
+                        <li><a href="about.html">Sobre</a></li>
+                        <li><a href="#contact">Contato</a></li>
+                    </ul>
+                </nav>
             </header>
             
             <header class="header-fixed">
@@ -213,9 +435,21 @@ class CustomHeader extends HTMLElement {
                         <li><a href="#contact">Contato</a></li>
                     </ul>
                     <button class="mobile-menu">
-                        <i class="fas fa-bars"></i>
+                        <div class="hamburger">
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                        </div>
                     </button>
                 </div>
+                <nav class="mobile-nav-menu">
+                    <ul>
+                        <li><a href="/#portfolio">Portfólio</a></li>
+                        <li><a href="about.html">Sobre</a></li>
+                        <li><a href="#contact">Contato</a></li>
+                    </ul>
+                </nav>
             </header>
         `;
     }
@@ -239,6 +473,7 @@ class CustomCategoryCard extends HTMLElement {
                     align-items: center;
                     justify-content: space-between;
                     gap: calc(100dvw/12*1);
+                    
                     .category-title {
                         font-size: 2.5rem;
                         font-weight: normal;
@@ -282,9 +517,11 @@ class CustomCategoryCard extends HTMLElement {
                         border-radius: 8px;
                     }
                 }
+                
                 .category-content:hover {
                     padding-right: calc(100dvw/12*1);
                     transition: transform 0.3s ease;
+                    
                     .arrow {
                         opacity: 1;
                     }
@@ -304,7 +541,52 @@ class CustomCategoryCard extends HTMLElement {
                         align-items: center;
                         justify-content: center;
                     }
+                }
 
+                /* Responsividade */
+                @media (max-width: 768px) {
+                    .category-content {
+                        flex-direction: column-reverse;
+                        padding: 3rem calc(100dvw/12*0.5);
+                        gap: 2rem;
+                        text-align: center;
+                    }
+
+                    .category-content .category-title {
+                        font-size: 2rem;
+                    }
+
+                    .category-content .category-description {
+                        font-size: 1.1rem;
+                    }
+
+                    .category-content img {
+                        width: 100%;
+                        max-width: 500px;
+                    }
+
+                    .category-content .arrow {
+                        display: none;
+                    }
+
+                    .category-content:hover {
+                        padding-right: calc(100dvw/12*0.5);
+                    }
+                }
+
+                @media (max-width: 480px) {
+                    .category-content {
+                        padding: 2rem 1rem;
+                    }
+
+                    .category-content .category-title {
+                        font-size: 1.5rem;
+                    }
+
+                    .category-content .category-description {
+                        font-size: 1rem;
+                        line-height: 1.4rem;
+                    }
                 }
             </style>
             <div class="category">

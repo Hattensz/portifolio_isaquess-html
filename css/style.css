@@ -62,12 +62,18 @@ main {
     display: flex;
     flex-direction: row;
     gap: 2rem;
+    @media (max-width: 480px) {
+        flex-direction: column;
+        align-items: center;
+        gap: 0;
+    }
 }
 
 .banner-card-caroussel {
-    width: 45dvw;
+    margin-left: 5dvh;
+    width: calc(100dvh/12*4);
     height: fit-content;
-    aspect-ratio: 16/9;
+    aspect-ratio: 9/16;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -79,6 +85,11 @@ main {
         height: 100%;
         object-fit: cover;
         transition: transform 0.5s ease;
+    }
+    @media (max-width: 480px) {
+        margin-left: 0;
+        width: calc(100dvw/12*8);
+        aspect-ratio: 9/16;
     }
 }
 
@@ -98,6 +109,15 @@ main {
         text-transform: uppercase;
         font-size: 2rem;
         color: var(--highlight-color);
+    }
+    @media (max-width: 480px) {
+        width: 90%;
+        font-size: 1.2rem;
+        text-align: center;
+        padding: 1rem;
+        span {
+            font-size: 1.5rem;
+        }
     }
 };
 
