@@ -1,0 +1,240 @@
+const videoAvila = [
+    {
+        id: 1,
+        title: "Evento Skin Club",
+        videoUrl: "https://player.vimeo.com/video/1142276376",
+        orientation: "vertical",
+        roles: ["Edição"],
+        year: "2025",
+    },
+    {
+        id: 2,
+        title: "Patch Secativos",
+        videoUrl: "https://www.youtube.com/embed/pcITYA10sNk",
+        orientation: "vertical",
+        roles: ["Captação", "Edição"],
+        year: "2022",
+    },
+    {
+        id: 3,
+        title: "Glow",
+        videoUrl: "https://www.youtube.com/embed/fWKN6qDridI",
+        orientation: "vertical",
+        roles: ["Captação", "Edição"],
+        year: "2022",
+    },
+    {
+        id: 4,
+        title: "Pálbebras",
+        videoUrl: "https://www.youtube.com/embed/zHegZYn6s6k",
+        orientation: "vertical",
+        roles: ["Captação", "Edição"],
+        year: "2022",
+    },
+    {
+        id: 5,
+        title: "Procedimentos Mharessa",
+        videoUrl: "https://www.youtube.com/embed/hC2M2Znpmvs",
+        orientation: "vertical",
+        roles: ["Edição"],
+        year: "2022",
+    },
+    {
+        id: 6,
+        title: "Papada",
+        videoUrl: "https://www.youtube.com/embed/Cg3F0tIhpQI",
+        orientation: "vertical",
+        roles: ["Captação", "Edição"],
+        year: "2022",
+    },
+    {
+        id: 7,
+        title: "Depoimento Amanda Ramalho",
+        videoUrl: "https://www.youtube.com/embed/csJeQD3Ggh0",
+        orientation: "vertical",
+        roles: ["Edição"],
+        year: "2022",
+    },
+    {
+        id: 8,
+        title: "Pincéis",
+        videoUrl: "https://www.youtube.com/embed/7XfQNqh85E8",
+        orientation: "vertical",
+        roles: ["Edição"],
+        year: "2022",
+    },
+    {
+        id: 9,
+        title: "Lábios",
+        videoUrl: "https://www.youtube.com/embed/l3e91jMaxgs",
+        orientation: "vertical",
+        roles: ["Edição", "Captação"],
+        year: "2022",
+    },
+    {
+        id: 10,
+        title: "Gominhas",
+        videoUrl: "https://www.youtube.com/embed/FwqCCfQIJRA",
+        orientation: "vertical",
+        roles: ["Edição"],
+        year: "2022",
+    },
+    {
+        id: 11,
+        title: "Lifting Facial",
+        videoUrl: "https://www.youtube.com/embed/u5ja7em_4Y4",
+        orientation: "vertical",
+        roles: ["Edição"],
+        year: "2022",
+    },
+    {
+        id: 12,
+        title: "Ozempic e Mounjaro",
+        videoUrl: "https://www.youtube.com/embed/uGv2UOvi8_g",
+        orientation: "vertical",
+        roles: ["Edição"],
+        year: "2022",
+    },
+    {
+        id: 13,
+        title: "Dia das Mães",
+        videoUrl: "https://www.youtube.com/embed/KHoOF8Auh-I",
+        orientation: "vertical",
+        roles: ["Edição"],
+        year: "2022",
+    },
+    {
+        id: 14,
+        title: "Secagem e Vasinhos",
+        videoUrl: "https://www.youtube.com/embed/Xj0T_G0ZmKk",
+        orientation: "vertical",
+        roles: ["Edição"],
+        year: "2022",
+    },
+    {
+        id: 19,
+        title: "Tratamentos de Verão: Consulta",
+        videoUrl: "https://player.vimeo.com/video/1142233418",
+        orientation: "vertical",
+        roles: ["Edição"],
+        year: "2025",
+    },
+    {
+        id: 20,
+        title: "Tratamento de Verão: MPT",
+        videoUrl: "https://player.vimeo.com/video/1142236277",
+        orientation: "vertical",
+        roles: ["Edição"],
+        year: "2025",
+    },
+    {
+        id: 21,
+        title: "Tratamento de Verão: Exilis",
+        videoUrl: "https://player.vimeo.com/video/1142238182",
+        orientation: "vertical",
+        roles: ["Edição"],
+        year: "2025",
+    },
+    {
+        id: 22,
+        title: "Tratamento de Verão: Coolsculpting",
+        videoUrl: "https://player.vimeo.com/video/1142237696",
+        orientation: "vertical",
+        roles: ["Edição"],
+        year: "2025",
+    }
+];
+
+const videoMusic = [
+    {
+        id: 15,
+        title: "Trapacinha Eletrônica",
+        videoUrl: "https://www.youtube.com/embed/_dLxyZY9T9o",
+        orientation: "horizontal",
+        roles: ["Fotografia", "Design Gráfico"],
+        client: "Gabriel Delaware",
+        year: "2023",
+    },
+    {
+        id: 16,
+        title: "Nos Olhos da Pintura",
+        videoUrl: "https://www.youtube.com/embed/-thou-se4Ro",
+        orientation: "horizontal",
+        roles: ["Iluminação", "Fotografia"],
+        client: "A Casa Caiu",
+        year: "2024",
+    },
+]
+
+const videoShortFilm = [
+    {
+        id: 17,
+        title: "Tenho Medo é dos Vivos",
+        videoUrl: "https://www.youtube.com/embed/IGKclpt3sKw",
+        orientation: "horizontal",
+        roles: ["Iluminação"],
+        client: "A Casa Caiu",
+        year: "2024",
+    },
+    {
+        id: 18,
+        title: "Verde Oliva *EM BREVE*",
+        videoUrl: false,
+        onGoingImg: "assets/ongoing/verdeoliva.png",
+        orientation: "horizontal",
+        roles: ["Fotografia"],
+        client: "A Casa Caiu",
+        year: "2025",
+    },
+]
+
+const videoSocialMedia = [
+    {
+        id: 23,
+        title: "Dr. André Ahmed - Cirurgia Plástica ",
+        videoUrl: "https://www.youtube.com/embed/P6qXbr4evxA",
+        orientation: "vertical",
+        roles: ["Edição"],
+        year: "2025",
+    },
+    {
+        id: 24,
+        title: "Dr. André Ahmed - Cirurgia Plástica 2",
+        videoUrl: "https://www.youtube.com/embed/WCZDRsx_URI",
+        orientation: "vertical",
+        roles: ["Edição"],
+        year: "2025",
+    },
+    {
+        id: 27,
+        title: "Show Nabru | Sec Pompéia",
+        videoUrl: "https://player.vimeo.com/video/1142239873",
+        orientation: "vertical",
+        roles: ["Edição"],
+        year: "2025",
+    }
+];
+
+const videoYoutube = [
+    {
+        id: 25,
+        title: "Os Paulistinhas - PROTEJA AS PATAS DO SEU CACHORRO – EVITE DOR E DOENÇAS",
+        videoUrl: "https://www.youtube.com/embed/Hd_x1vCCWRc",
+        orientation: "horizontal",
+        roles: ["Edição"],
+        year: "2025",
+    }
+];
+
+const videoDocumentary = [
+    {
+        id: 26,
+        title: "Fogo Urbano - Documentário",
+        videoUrl: "https://www.youtube.com/embed/-9fhcg7LIkM",
+        orientation: "horizontal",
+        roles: ["Fotografia", "Produção"],
+        year: "2025",
+    }
+];
+
+export { videoSocialMedia, videoAvila, videoMusic, videoShortFilm, videoYoutube, videoDocumentary };

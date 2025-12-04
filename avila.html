@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="../assets/logo.png">
+    <title>Isaque Santos</title>
+    <script src="components/components.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Anton&family=Public+Sans:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <custom-header></custom-header>
+    <custom-category
+        categoryTitle="Mídias Sociais"
+        text="Produções criadas para redes sociais. Ritmo, estética e mensagem trabalhando juntos pra gerar impacto e conexão."
+        pages='[
+        {"label": "Mídias Sociais", "url": "socialmedia.html"},
+        {"label": "Clínica Ávila", "url": "avila.html"},
+        {"label": "Vídeoclipes", "url": "musicvideo.html"},
+        {"label": "Curtametragens", "url": "shortfilm.html"},
+        {"label": "Documentários", "url": "documentary.html"},
+        {"label": "YouTube", "url": "youtube.html"}
+        ]'
+        ></custom-category>
+    <custom-contact></custom-contact>
+    <custom-footer></custom-footer>
+    <script type="module">
+        import { videoAvila } from './components/videos.js';
+        document.addEventListener('DOMContentLoaded', () => {
+            const el = document.querySelector('custom-category');
+            if (el) el.setAttribute('video-list', JSON.stringify(videoAvila));
+        });
+    </script>
+</body>
+</html>

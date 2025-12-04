@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="../assets/logo.png">
+    <title>Isaque Santos</title>
+    <script src="components/components.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Anton&family=Public+Sans:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <custom-header></custom-header>
+    <div class="home-banner-container">
+        <div class="home-banner-content">
+            <div class="banner-card-caroussel">
+                <img src="assets/thumbnails/HOMEPAGE_sobre2.gif" alt="">
+            </div>
+            <div class="home-banner-intro">
+                <p>Olá sou o <span>Isaque</span>,<br/>estou ansioso para trabalhar no nosso próximo vídeo!</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="portfolio" id="portfolio">
+        <div class="rectangle"></div>
+        <custom-category-card 
+            data-title="Mídias Sociais"
+            data-description="Produções criadas para redes sociais. Ritmo, estética e mensagem trabalhando juntos pra gerar impacto e conexão."
+            data-image="assets/thumbnails/HOMEPAGE_Edit_ShowNabru_4x3.gif"
+            data-link="socialmedia.html"
+        ></custom-category-card>
+        <custom-category-card 
+            data-title="Clínica Ávila"
+            data-description="Produções criadas para redes sociais para a Clínica Ávila. Ritmo, estética e mensagem trabalhando juntos pra gerar impacto e conexão."
+            data-image="assets/thumbnails/avila.png"
+            data-link="avila.html"
+        ></custom-category-card>
+        <custom-category-card 
+            data-title="Videoclipes"
+            data-description="Projetos musicais nos quais a direção de imagem, o ritmo e a estética estão alinhados com a identidade e a emoção da música."
+            data-image="assets/thumbnails/HOMEPAGE_trapacinha.gif"
+            data-link="musicvideo.html"
+        ></custom-category-card>
+        <custom-category-card 
+            data-title="Curtametragens"
+            data-description="Narrativas autorais e experimentais que exploram linguagem cinematográfica e construção visual."
+            data-image="assets/thumbnails/HOMEPAGE_curta1.gif"
+            data-link="shortfilm.html"
+        ></custom-category-card>
+        <custom-category-card 
+            data-title="Documentários"
+            data-description="Registros reais com foco em storytelling, autenticidade e impacto visual."
+            data-image="assets/thumbnails/HOMEPAGE_documentário1.gif"
+            data-link="documentary.html"
+        ></custom-category-card>
+        <custom-category-card 
+            data-title="Youtube"
+            data-description="Nada ainda..."
+            data-image=""
+            data-link="youtube.html"
+        ></custom-category-card>
+        <div class="line"></div>
+        <div class="rectangle"></div>
+    </div>
+
+    <custom-contact></custom-contact>
+
+    <custom-footer></custom-footer>
+    <script src="js/caroussel.js"></script>
+</body>
+</html>
