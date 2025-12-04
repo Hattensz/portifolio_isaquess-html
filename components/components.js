@@ -27,8 +27,8 @@ class CustomHeader extends HTMLElement {
         this.staticHeader = this.querySelector('.header-static');
         this.fixedHeader = this.querySelector('.header-fixed');
         this.mobileMenuButtons = this.querySelectorAll('.mobile-menu');
-        this.mobileNavMenus = this.querySelectorAll('.mobile-nav-menu');
-        this.overlays = this.querySelectorAll('.mobile-overlay');
+        this.mobileNavMenu = this.querySelector('.mobile-nav-menu');
+        this.mobileOverlay = this.querySelector('.mobile-overlay');
     }
 
     calculateHeights() {
@@ -61,9 +61,13 @@ class CustomHeader extends HTMLElement {
             btn.classList.toggle('active');
         });
         
-        this.mobileNavMenus.forEach(menu => {
-            menu.classList.toggle('active');
-        });
+        if (this.mobileNavMenu) {
+            this.mobileNavMenu.classList.toggle('active');
+        }
+
+        if (this.mobileOverlay) {
+            this.mobileOverlay.classList.toggle('active');
+        }
 
         document.body.style.overflow = this.mobileMenuOpen ? 'hidden' : '';
     }
@@ -73,12 +77,12 @@ class CustomHeader extends HTMLElement {
         window.addEventListener('resize', this.handleResize);
         
         this.mobileMenuButtons.forEach(btn => {
-            btn.addEventListener('click', (e) => {
-                e.preventDefault();
-                e.stopPropagation();
-                this.toggleMobileMenu();
-            });
+            btn.addEventListener('click', this.toggleMobileMenu);
         });
+
+        if (this.mobileOverlay) {
+            this.mobileOverlay.addEventListener('click', this.toggleMobileMenu);
+        }
 
         const mobileLinks = this.querySelectorAll('.mobile-nav-menu a');
         mobileLinks.forEach(link => {
@@ -88,35 +92,6 @@ class CustomHeader extends HTMLElement {
                 }
             });
         });
-
-        const overlays = this.querySelectorAll('.mobile-overlay');
-        overlays.forEach(overlay => {
-            overlay.addEventListener('click', () => {
-                if (this.mobileMenuOpen) {
-                    this.toggleMobileMenu();
-                }
-            });
-        });
-    }
-
-    toggleMobileMenu() {
-        this.mobileMenuOpen = !this.mobileMenuOpen;
-        
-        this.mobileMenuButtons.forEach(btn => {
-            btn.classList.toggle('active');
-        });
-        
-        this.mobileNavMenus.forEach(menu => {
-            menu.classList.toggle('active');
-        });
-
-
-        const overlays = this.querySelectorAll('.mobile-overlay');
-        overlays.forEach(overlay => {
-            overlay.classList.toggle('active');
-        });
-
-        document.body.style.overflow = this.mobileMenuOpen ? 'hidden' : '';
     }
 
     render() {
@@ -175,6 +150,7 @@ class CustomHeader extends HTMLElement {
                     color: var(--text-color);
                     text-decoration: none;
                     z-index: 1002;
+                    position: relative;
                 }
                 
                 .logo span {
@@ -226,73 +202,54 @@ class CustomHeader extends HTMLElement {
                 
                 .mobile-menu {
                     display: none;
-                    font-size: 1.5rem;
                     cursor: pointer;
-                    color: var(--text-color);
                     background: none;
                     border: none;
                     z-index: 1002;
-                    width: 30px;
-                    height: 30px;
+                    padding: 10px;
                     position: relative;
-                    padding: 0;
                 }
 
                 .hamburger {
                     width: 30px;
                     height: 20px;
                     position: relative;
-                    transform: rotate(0deg);
-                    transition: .5s ease-in-out;
-                    cursor: pointer;
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: space-between;
                 }
 
                 .hamburger span {
                     display: block;
-                    position: absolute;
                     height: 3px;
                     width: 100%;
                     background: var(--text-color);
                     border-radius: 3px;
-                    opacity: 1;
-                    left: 0;
-                    transform: rotate(0deg);
                     transition: .25s ease-in-out;
+                    transform-origin: center;
                 }
 
-                .hamburger span:nth-child(1) {
-                    top: 0px;
+                .mobile-menu.active .hamburger {
+                    justify-content: center;
+                    gap: 0;
                 }
 
-                .hamburger span:nth-child(2),
-                .hamburger span:nth-child(3) {
-                    top: 8px;
-                }
-
-                .hamburger span:nth-child(4) {
-                    top: 16px;
-                }
-
-                .mobile-menu.active .hamburger span:nth-child(1) {
-                    top: 8px;
-                    width: 0%;
-                    left: 50%;
+                .mobile-menu.active .hamburger span:nth-child(1),
+                .mobile-menu.active .hamburger span:nth-child(4) {
+                    opacity: 0;
                 }
 
                 .mobile-menu.active .hamburger span:nth-child(2) {
                     transform: rotate(45deg);
+                    position: absolute;
                 }
 
                 .mobile-menu.active .hamburger span:nth-child(3) {
                     transform: rotate(-45deg);
+                    position: absolute;
                 }
 
-                .mobile-menu.active .hamburger span:nth-child(4) {
-                    top: 8px;
-                    width: 0%;
-                    left: 50%;
-                }
-
+                /* Menu Mobile - ÚNICO para ambos headers */
                 .mobile-nav-menu {
                     position: fixed;
                     top: 0;
@@ -302,7 +259,7 @@ class CustomHeader extends HTMLElement {
                     height: 100vh;
                     background-color: var(--secondary-color-opacity85);
                     backdrop-filter: blur(20px);
-                    z-index: 1001;
+                    z-index: 1002;
                     transition: right 0.4s cubic-bezier(0.4, 0, 0.2, 1);
                     padding-top: 5rem;
                     box-shadow: -5px 0 20px rgba(0, 0, 0, 0.5);
@@ -361,7 +318,7 @@ class CustomHeader extends HTMLElement {
                     width: 100%;
                     height: 100vh;
                     background-color: rgba(0, 0, 0, 0.7);
-                    z-index: 1000;
+                    z-index: 1001;
                     opacity: 0;
                     pointer-events: none;
                     transition: opacity 0.4s ease;
@@ -400,6 +357,14 @@ class CustomHeader extends HTMLElement {
             
             <div class="mobile-overlay"></div>
             
+            <nav class="mobile-nav-menu">
+                <ul>
+                    <li><a href="/#portfolio">Portfólio</a></li>
+                    <li><a href="about.html">Sobre</a></li>
+                    <li><a href="#contact">Contato</a></li>
+                </ul>
+            </nav>
+            
             <header class="header-static">
                 <div class="container nav-container">
                     <a href="index.html" class="logo">Isaque<span>Santos</span></a>
@@ -417,13 +382,6 @@ class CustomHeader extends HTMLElement {
                         </div>
                     </button>
                 </div>
-                <nav class="mobile-nav-menu">
-                    <ul>
-                        <li><a href="/#portfolio">Portfólio</a></li>
-                        <li><a href="about.html">Sobre</a></li>
-                        <li><a href="#contact">Contato</a></li>
-                    </ul>
-                </nav>
             </header>
             
             <header class="header-fixed">
@@ -443,13 +401,6 @@ class CustomHeader extends HTMLElement {
                         </div>
                     </button>
                 </div>
-                <nav class="mobile-nav-menu">
-                    <ul>
-                        <li><a href="/#portfolio">Portfólio</a></li>
-                        <li><a href="about.html">Sobre</a></li>
-                        <li><a href="#contact">Contato</a></li>
-                    </ul>
-                </nav>
             </header>
         `;
     }
