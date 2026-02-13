@@ -622,7 +622,7 @@ class CustomContact extends HTMLElement {
                             <h2 class="section-title">Entre em <br/> Contato</h2>
                             <div class="contact-details">
                                 <div class="social-links">
-                                    <a href="#" class="social-link"><i class="fa-brands fa-linkedin"></i></a>
+                                    <a href="https://www.linkedin.com/in/isaque-santos-886aa6218" class="social-link" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-linkedin"></i></a>
                                 </div>
                             </div>
                         </div>
