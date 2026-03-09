@@ -1,6 +1,7 @@
 const videoAvila = [
     {
         id: 1,
+        order: 1,
         title: "Evento Skin Club",
         videoUrl: "https://player.vimeo.com/video/1142276376",
         orientation: "vertical",
@@ -9,6 +10,7 @@ const videoAvila = [
     },
     {
         id: 2,
+        order: 2,
         title: "Patch Secativos",
         videoUrl: "https://www.youtube.com/embed/pcITYA10sNk",
         orientation: "vertical",
@@ -17,6 +19,7 @@ const videoAvila = [
     },
     {
         id: 3,
+        order: 3,
         title: "Glow",
         videoUrl: "https://www.youtube.com/embed/fWKN6qDridI",
         orientation: "vertical",
@@ -25,6 +28,7 @@ const videoAvila = [
     },
     {
         id: 4,
+        order: 4,
         title: "Pálbebras",
         videoUrl: "https://www.youtube.com/embed/zHegZYn6s6k",
         orientation: "vertical",
@@ -33,6 +37,7 @@ const videoAvila = [
     },
     {
         id: 5,
+        order: 5,
         title: "Procedimentos Mharessa",
         videoUrl: "https://www.youtube.com/embed/hC2M2Znpmvs",
         orientation: "vertical",
@@ -41,6 +46,7 @@ const videoAvila = [
     },
     {
         id: 6,
+        order: 6,
         title: "Papada",
         videoUrl: "https://www.youtube.com/embed/Cg3F0tIhpQI",
         orientation: "vertical",
@@ -49,6 +55,7 @@ const videoAvila = [
     },
     {
         id: 7,
+        order: 7,
         title: "Depoimento Amanda Ramalho",
         videoUrl: "https://www.youtube.com/embed/csJeQD3Ggh0",
         orientation: "vertical",
@@ -57,6 +64,7 @@ const videoAvila = [
     },
     {
         id: 8,
+        order: 8,
         title: "Pincéis",
         videoUrl: "https://www.youtube.com/embed/7XfQNqh85E8",
         orientation: "vertical",
@@ -65,6 +73,7 @@ const videoAvila = [
     },
     {
         id: 9,
+        order: 9,
         title: "Lábios",
         videoUrl: "https://www.youtube.com/embed/l3e91jMaxgs",
         orientation: "vertical",
@@ -73,6 +82,7 @@ const videoAvila = [
     },
     {
         id: 10,
+        order: 10,
         title: "Gominhas",
         videoUrl: "https://www.youtube.com/embed/FwqCCfQIJRA",
         orientation: "vertical",
@@ -81,6 +91,7 @@ const videoAvila = [
     },
     {
         id: 11,
+        order: 11,
         title: "Lifting Facial",
         videoUrl: "https://www.youtube.com/embed/u5ja7em_4Y4",
         orientation: "vertical",
@@ -89,6 +100,7 @@ const videoAvila = [
     },
     {
         id: 12,
+        order: 12,
         title: "Ozempic e Mounjaro",
         videoUrl: "https://www.youtube.com/embed/uGv2UOvi8_g",
         orientation: "vertical",
@@ -97,6 +109,7 @@ const videoAvila = [
     },
     {
         id: 13,
+        order: 13,
         title: "Dia das Mães",
         videoUrl: "https://www.youtube.com/embed/KHoOF8Auh-I",
         orientation: "vertical",
@@ -105,6 +118,7 @@ const videoAvila = [
     },
     {
         id: 14,
+        order: 14,
         title: "Secagem e Vasinhos",
         videoUrl: "https://www.youtube.com/embed/Xj0T_G0ZmKk",
         orientation: "vertical",
@@ -113,6 +127,7 @@ const videoAvila = [
     },
     {
         id: 19,
+        order: -4,
         title: "Tratamentos de Verão: Consulta",
         videoUrl: "https://player.vimeo.com/video/1142233418",
         orientation: "vertical",
@@ -121,6 +136,7 @@ const videoAvila = [
     },
     {
         id: 20,
+        order: -3,
         title: "Tratamento de Verão: MPT",
         videoUrl: "https://player.vimeo.com/video/1142236277",
         orientation: "vertical",
@@ -129,6 +145,7 @@ const videoAvila = [
     },
     {
         id: 21,
+        order: -2,
         title: "Tratamento de Verão: Exilis",
         videoUrl: "https://player.vimeo.com/video/1142238182",
         orientation: "vertical",
@@ -137,17 +154,55 @@ const videoAvila = [
     },
     {
         id: 22,
+        order: -1,
         title: "Tratamento de Verão: Coolsculpting",
         videoUrl: "https://player.vimeo.com/video/1142237696",
         orientation: "vertical",
         roles: ["Edição"],
         year: "2025",
+    },
+    {
+        id: 23,
+        order: -10,
+        title: "EELS | Clínica Avila - Evento Allergan 2026",
+        videoUrl: "https://player.vimeo.com/video/1167030031",
+        orientation: "vertical",
+        roles: ["Edição"],
+        year: "2026",
+    },
+    {
+        id: 24,
+        order: -11,
+        title: "REELS | Clínica Avila - IMCAS 2026",
+        videoUrl: "https://player.vimeo.com/video/1167030822",
+        orientation: "vertical",
+        roles: ["Edição"],
+        year: "2026",
+    },
+    {
+        id: 25,
+        order: -12,
+        title: "REELS | Clínica Avila – Exion",
+        videoUrl: "https://player.vimeo.com/video/1167030469",
+        orientation: "vertical",
+        roles: ["Edição"],
+        year: "2026",
+    },
+    {
+        id: 26,
+        order: -13,
+        title: "TREELS | Clínica Avila - Protocolo Skin Regeneration: Paris",
+        videoUrl: "https://player.vimeo.com/video/1167766028",
+        orientation: "vertical",
+        roles: ["Edição"],
+        year: "2026",
     }
 ];
 
 const videoMusic = [
     {
-        id: 15,
+        id: 1015,
+        order: 1,
         title: "Trapacinha Eletrônica",
         videoUrl: "https://www.youtube.com/embed/_dLxyZY9T9o",
         orientation: "horizontal",
@@ -156,7 +211,8 @@ const videoMusic = [
         year: "2023",
     },
     {
-        id: 16,
+        id: 1016,
+        order: 0,
         title: "Nos Olhos da Pintura",
         videoUrl: "https://www.youtube.com/embed/-thou-se4Ro",
         orientation: "horizontal",
@@ -168,7 +224,8 @@ const videoMusic = [
 
 const videoShortFilm = [
     {
-        id: 17,
+        id: 2017,
+        order: 1,
         title: "Tenho Medo é dos Vivos",
         videoUrl: "https://www.youtube.com/embed/IGKclpt3sKw",
         orientation: "horizontal",
@@ -177,7 +234,8 @@ const videoShortFilm = [
         year: "2024",
     },
     {
-        id: 18,
+        id: 2018,
+        order: 0,
         title: "Verde Oliva *EM BREVE*",
         videoUrl: false,
         onGoingImg: "assets/ongoing/verdeoliva.png",
@@ -190,7 +248,8 @@ const videoShortFilm = [
 
 const videoSocialMedia = [
     {
-        id: 23,
+        id: 3023,
+        order: 1000,
         title: "Dr. André Ahmed - Cirurgia Plástica ",
         videoUrl: "https://www.youtube.com/embed/P6qXbr4evxA",
         orientation: "vertical",
@@ -198,7 +257,8 @@ const videoSocialMedia = [
         year: "2025",
     },
     {
-        id: 24,
+        id: 3024,
+        order: 1001,
         title: "Dr. André Ahmed - Cirurgia Plástica 2",
         videoUrl: "https://www.youtube.com/embed/WCZDRsx_URI",
         orientation: "vertical",
@@ -206,7 +266,8 @@ const videoSocialMedia = [
         year: "2025",
     },
     {
-        id: 27,
+        id: 3027,
+        order: 999,
         title: "Show Nabru | Sec Pompéia",
         videoUrl: "https://player.vimeo.com/video/1142239873",
         orientation: "vertical",
@@ -214,7 +275,8 @@ const videoSocialMedia = [
         year: "2025",
     },
     {
-        id: 28,
+        id: 3028,
+        order: 4,
         title: "REELS | PauloGuimarães - PA Clinic",
         videoUrl: "https://player.vimeo.com/video/1154135175",
         orientation: "vertical",
@@ -222,7 +284,8 @@ const videoSocialMedia = [
         year: "2025",
     },
     {
-        id: 29,
+        id: 3029,
+        order: 5,
         title: "REELS | PauloGuimarães - Final de Ano 1",
         videoUrl: "https://player.vimeo.com/video/1154135076",
         orientation: "vertical",
@@ -230,7 +293,8 @@ const videoSocialMedia = [
         year: "2025",
     },
     {
-        id: 30,
+        id: 3030,
+        order: 6,
         title: "REELS | PauloGuimarães - Final de Ano 2",
         videoUrl: "https://player.vimeo.com/video/1154135123",
         orientation: "vertical",
@@ -238,7 +302,8 @@ const videoSocialMedia = [
         year: "2025",
     },
     {
-        id: 31,
+        id: 3031,
+        order: 7,
         title: "REELS | PauloGuimarães - Assimetria das Mama",
         videoUrl: "https://player.vimeo.com/video/1154135031",
         orientation: "vertical",
@@ -246,7 +311,8 @@ const videoSocialMedia = [
         year: "2025",
     },
     {
-        id: 32,
+        id: 3032,
+        order: 8,
         title: "Comercial | GuiCintra - Anatomia do Movimento I",
         videoUrl: "https://www.youtube.com/embed/zDMkAncltJA",
         orientation: "vertical",
@@ -254,7 +320,8 @@ const videoSocialMedia = [
         year: "2025",
     },
     {
-        id: 33,
+        id: 3033,
+        order: 9,
         title: "Comercial | GuiCintra - Anatomia do Movimento II",
         videoUrl: "https://www.youtube.com/embed/Krnmz_W7Srs",
         orientation: "vertical",
@@ -262,7 +329,8 @@ const videoSocialMedia = [
         year: "2025",
     },
     {
-        id: 34,
+        id: 3034,
+        order: 10,
         title: "Comercial | GuiCintra - Anatomia do Movimento III",
         videoUrl: "https://www.youtube.com/embed/VKyDRvIMMUs",
         orientation: "vertical",
@@ -270,7 +338,8 @@ const videoSocialMedia = [
         year: "2025",
     },
     {
-        id: 35,
+        id: 3035,
+        order: 11,
         title: "Comercial | GuiCintra - Apresentação - Anatomia do Movimento IV",
         videoUrl: "https://www.youtube.com/embed/TCgFavRD2N8",
         orientation: "vertical",
@@ -278,7 +347,8 @@ const videoSocialMedia = [
         year: "2025",
     },
     {
-        id: 36,
+        id: 3036,
+        order: 12,
         title: "REELS | Aptus - 3 pilares",
         videoUrl: "https://www.youtube.com/embed/6lYgnhGaA_c",
         orientation: "vertical",
@@ -286,7 +356,8 @@ const videoSocialMedia = [
         year: "2025",
     },
     {
-        id: 37,
+        id: 3037,
+        order: 13,
         title: "REELS | Aptus - 2026 está chegando",
         videoUrl: "https://www.youtube.com/embed/CwhaiR477xQ",
         orientation: "vertical",
@@ -294,7 +365,8 @@ const videoSocialMedia = [
         year: "2025",
     },
     {
-        id: 38,
+        id: 3038,
+        order: 14,
         title: "REELS | Aptus - Faturamento ",
         videoUrl: "https://www.youtube.com/embed/vg8hcwqiQwo",
         orientation: "vertical",
@@ -302,7 +374,8 @@ const videoSocialMedia = [
         year: "2025",
     },
     {
-        id: 39,
+        id: 3039,
+        order: 15,
         title: "REELS | Aptus - Médico do Futuro",
         videoUrl: "https://www.youtube.com/embed/BZYZR1rrZy8",
         orientation: "vertical",
@@ -310,29 +383,60 @@ const videoSocialMedia = [
         year: "2025",
     },
     {
-        id: 40,
+        id: 3040,
+        order: 16,
         title: "REELS | Aptus - INOVAT 2026",
         videoUrl: "https://www.youtube.com/embed/VaR9yrqsuhM",
         orientation: "vertical",
         roles: ["Captação", "Edição"],
         year: "2025",
-    }
+    },
+    {
+        id: 3041,
+        order: -1,
+        title: "REELS | Clínica Andriolo",
+        videoUrl: "https://www.youtube.com/embed/bSXVlQm3Kj8",
+        orientation: "vertical",
+        roles: ["Edição"],
+        year: "2026",
+    },
+    {
+        id: 3042,
+        order: -2,
+        title: "REELS | Clínica Andriolo – Depoimento Amadeo",
+        videoUrl: "https://www.youtube.com/embed/fcyJL_6bY2U",
+        orientation: "vertical",
+        roles: ["Edição"],
+        year: "2026",
+    },
+
 ];
 
 const videoYoutube = [
     {
-        id: 25,
+        id: 4025,
+        order: 1,
         title: "Os Paulistinhas - PROTEJA AS PATAS DO SEU CACHORRO – EVITE DOR E DOENÇAS",
         videoUrl: "https://www.youtube.com/embed/Hd_x1vCCWRc",
         orientation: "horizontal",
         roles: ["Edição"],
         year: "2025",
+    },
+    {
+        id: 4026,
+        order: 0,
+        title: "Marcelo Trincado - Quantum RF 25",
+        videoUrl: "https://player.vimeo.com/video/1167223321",
+        orientation: "horizontal",
+        roles: ["Edição"],
+        year: "2026",
     }
 ];
 
 const videoDocumentary = [
     {
-        id: 26,
+        id: 5026,
+        order: 10000,
         title: "Fogo Urbano - Documentário",
         videoUrl: "https://www.youtube.com/embed/-9fhcg7LIkM",
         orientation: "horizontal",

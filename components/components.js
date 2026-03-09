@@ -924,6 +924,9 @@ class CustomCategory extends HTMLElement {
             console.error('Error parsing video list:', e);
         }
 
+        // Ordenar vídeos pelo campo 'order'
+        videos.sort((a, b) => (a.order || 0) - (b.order || 0));
+
         return videos.map(video => {
             const isHorizontal = String((video.orientation || '')).toLowerCase() === 'horizontal';
             let src = video.videoUrl || '';
