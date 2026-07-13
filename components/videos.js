@@ -164,7 +164,7 @@ const videoAvila = [
     {
         id: 23,
         order: -10,
-        title: "EELS | Clínica Avila - Evento Allergan 2026",
+        title: "REELS | Clínica Avila - Evento Allergan 2026",
         videoUrl: "https://player.vimeo.com/video/1167030031",
         orientation: "vertical",
         roles: ["Edição"],
@@ -191,7 +191,7 @@ const videoAvila = [
     {
         id: 26,
         order: -13,
-        title: "TREELS | Clínica Avila - Protocolo Skin Regeneration: Paris",
+        title: "REELS | Clínica Avila - Protocolo Skin Regeneration: Paris",
         videoUrl: "https://player.vimeo.com/video/1167766028",
         orientation: "vertical",
         roles: ["Edição"],
